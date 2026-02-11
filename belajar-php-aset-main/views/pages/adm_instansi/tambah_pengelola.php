@@ -27,64 +27,42 @@
                 </div>
 
                 <div class="card-body p-4 p-md-4">
-                    <form action="#" method="POST">
-                        <div class="d-flex flex-column gap-4">
-                            
-                            <div class="form-group">
-                                <label class="form-label small fw-bold text-muted text-uppercase ls-wide mb-2 d-block">Nama Lengkap</label>
-                                <div class="input-group border rounded-3 overflow-hidden bg-light custom-input-group transition-all">
-                                    <span class="input-group-text bg-transparent border-0 text-muted ps-3">
-                                        <i data-lucide="user" size="18"></i>
-                                    </span>
-                                    <input type="text" name="nama" class="form-control bg-transparent border-0 shadow-none py-2" placeholder="Contoh: Ahmad Syaban" required>
-                                </div>
-                            </div>
+                   <form action="views/pages/adm_instansi/proses_tambah.php" method="POST">
+    
+    <div class="mb-3">
+        <label class="form-label small fw-bold text-muted">Pilih Pegawai</label>
+        <div class="input-group">
+            <span class="input-group-text bg-light border-0"><i data-lucide="user" size="16"></i></span>
+            <select name="id_pegawai" class="form-select bg-light border-0 shadow-none" required>
+                <option value="">-- Pilih Pegawai --</option>
+                <?php
+                // Ambil data pegawai yang BELUM jadi pengelola aset (biar tidak dobel)
+                $q_pegawai = mysqli_query($koneksi, "SELECT * FROM pegawai WHERE IdPegawai NOT IN (SELECT IdPegawai FROM pengelola_aset) ORDER BY Nama ASC");
+                while($p = mysqli_fetch_assoc($q_pegawai)){
+                    echo "<option value='".$p['IdPegawai']."'>".$p['Nama']." (ID: ".$p['IdPegawai'].")</option>";
+                }
+                ?>
+            </select>
+        </div>
+        <small class="text-muted" style="font-size: 10px;">*Hanya pegawai yang belum punya akun yang muncul.</small>
+    </div>
 
-                            <div class="form-group">
-                                <label class="form-label small fw-bold text-muted text-uppercase ls-wide mb-2 d-block">Username</label>
-                                <div class="input-group border rounded-3 overflow-hidden bg-light custom-input-group transition-all">
-                                    <span class="input-group-text bg-transparent border-0 text-muted ps-3">
-                                        <i data-lucide="at-sign" size="18"></i>
-                                    </span>
-                                    <input type="text" name="username" class="form-control bg-transparent border-0 shadow-none py-2" placeholder="username123" required>
-                                </div>
-                            </div>
+    <div class="mb-3">
+        <label class="form-label small fw-bold text-muted">Hak Akses (Role)</label>
+        <div class="input-group">
+            <span class="input-group-text bg-light border-0"><i data-lucide="shield-check" size="16"></i></span>
+            <select name="role" class="form-select bg-light border-0 shadow-none">
+                <option value="staf_aset">Staf Aset</option>
+                <option value="adm_aset">Admin Aset</option>
+                <option value="teknisi">Teknisi</option>
+            </select>
+        </div>
+    </div>
 
-                            <div class="form-group">
-                                <label class="form-label small fw-bold text-muted text-uppercase ls-wide mb-2 d-block">Password</label>
-                                <div class="input-group border rounded-3 overflow-hidden bg-light custom-input-group transition-all">
-                                    <span class="input-group-text bg-transparent border-0 text-muted ps-3">
-                                        <i data-lucide="lock" size="18"></i>
-                                    </span>
-                                    <input type="password" name="password" class="form-control bg-transparent border-0 shadow-none py-2" placeholder="••••••••" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="form-label small fw-bold text-muted text-uppercase ls-wide mb-2 d-block">Role / Hak Akses</label>
-                                <div class="input-group border rounded-3 overflow-hidden bg-light custom-input-group transition-all">
-                                    <span class="input-group-text bg-transparent border-0 text-muted ps-3">
-                                        <i data-lucide="shield-check" size="18"></i>
-                                    </span>
-                                    <select name="role" class="form-select bg-transparent border-0 shadow-none py-2" required>
-                                        <option value="" selected disabled>Pilih Hak Akses...</option>
-                                        <option value="admin">Administrator</option>
-                                        <option value="staff">Staff Instansi</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="mt-2 pt-4 border-top d-flex gap-2">
-                                <button type="submit" class="btn btn-primary px-4 rounded-3 fw-bold d-flex align-items-center gap-2 py-2 shadow-sm btn-save transition-all" style="background-color: var(--accent); border: none;">
-                                    <i data-lucide="save" size="18"></i> Simpan Data
-                                </button>
-                                <a href="index.php?pegawai" class="btn btn-light px-4 rounded-3 fw-bold text-muted border py-2 transition-all">
-                                    Batal
-                                </a>
-                            </div>
-
-                        </div>
-                    </form>
+    <button type="submit" name="simpan" class="btn btn-primary w-100 py-2 fw-bold rounded-3">
+        Simpan Akun Baru
+    </button>
+</form>
                 </div>
             </div>
             

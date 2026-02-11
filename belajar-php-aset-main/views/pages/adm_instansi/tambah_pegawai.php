@@ -3,115 +3,136 @@
 ?>
 
 <div class="content-wrapper p-4">
-    <div class="mb-4" style="margin-top: -10px;">
-        <a href="index.php?pegawai" class="btn btn-white btn-sm border rounded-3 shadow-sm px-3 d-inline-flex align-items-center gap-2 bg-white transition-all hover-up">
-            <i data-lucide="arrow-left" size="14" class="text-primary"></i> 
-            <span style="font-size: 13px;" class="fw-bold text-dark">Kembali ke Daftar</span>
-        </a>
+    <div class="mb-4 fade-in-up" style="animation-delay: 0.1s;">
+        <?= btn::back("index.php?pegawai", "Kembali", "arrow-left"); ?>
     </div>
 
-    <div class="row">
-        <div class="col-12 col-lg-7 col-xl-6">
-            <div class="card-premium overflow-hidden shadow-sm border-0 rounded-4 bg-white">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-8 col-xl-7">
+            
+            <div class="card border-0 shadow-lg rounded-4 overflow-hidden fade-in-up" style="animation-delay: 0.2s;">
                 
-                <div class="p-4 border-bottom bg-light bg-opacity-25">
-                    <div class="d-flex align-items-center gap-3">
-                        <div class="icon-shape bg-primary bg-opacity-10 text-primary rounded-3 p-2 d-flex align-items-center justify-content-center">
-                            <i data-lucide="user-plus" size="20"></i>
+                <div class="card-header bg-white border-bottom p-4 position-relative overflow-hidden">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 bg-primary opacity-5"></div> <div class="d-flex align-items-center gap-3 position-relative z-1">
+                        <div class="bg-primary bg-opacity-10 text-primary rounded-3 p-3 shadow-sm">
+                            <i data-lucide="user-plus" class="d-block"></i>
                         </div>
                         <div>
-                            <h5 class="fw-800 mb-0 text-dark">Form Tambah Pegawai</h5>
-                            <p class="text-muted small mb-0">Input data pengelola aset baru ke dalam sistem.</p>
+                            <h5 class="fw-bold mb-1 text-dark">Tambah Pegawai Baru</h5>
+                            <p class="text-muted small mb-0">Lengkapi formulir di bawah ini untuk menambahkan akses pengguna.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="card-body p-4 p-md-4">
-                    <form action="#" method="POST">
-                        <div class="d-flex flex-column gap-4">
-                            
-                            <div class="form-group">
-                                <label class="form-label small fw-bold text-muted text-uppercase ls-wide mb-2 d-block">Nama Lengkap</label>
-                                <div class="input-group border rounded-3 overflow-hidden bg-light custom-input-group transition-all">
-                                    <span class="input-group-text bg-transparent border-0 text-muted ps-3">
-                                        <i data-lucide="user" size="18"></i>
-                                    </span>
-                                    <input type="text" name="nama" class="form-control bg-transparent border-0 shadow-none py-2" placeholder="Contoh: Ahmad Syaban" required>
-                                </div>
-                            </div>
+                <div class="card-body p-4 p-md-5">
+                    <form action="views/controllers/proses_pegawai.php" method="POST" autocomplete="off">
+                        
+    <div class="row g-4 mb-4">
+        <div class="col-md-6">
+            <label class="form-label small fw-bold text-uppercase text-muted ls-wide">Nama Lengkap <span class="text-danger">*</span></label>
+            <div class="input-group input-group-merge">
+                <span class="input-group-text bg-white border-end-0 ps-3 text-muted"><i data-lucide="user" size="18"></i></span>
+                <input type="text" name="nama" class="form-control border-start-0 ps-0 bg-white" placeholder="Cth: Budi Santoso" required>
+            </div>
+        </div>
 
-                            <div class="form-group">
-                                <label class="form-label small fw-bold text-muted text-uppercase ls-wide mb-2 d-block">Username</label>
-                                <div class="input-group border rounded-3 overflow-hidden bg-light custom-input-group transition-all">
-                                    <span class="input-group-text bg-transparent border-0 text-muted ps-3">
-                                        <i data-lucide="at-sign" size="18"></i>
-                                    </span>
-                                    <input type="text" name="username" class="form-control bg-transparent border-0 shadow-none py-2" placeholder="username123" required>
-                                </div>
-                            </div>
+        <div class="col-md-6">
+            <label class="form-label small fw-bold text-uppercase text-muted ls-wide">Gender <span class="text-danger">*</span></label>
+            <div class="input-group input-group-merge">
+                <span class="input-group-text bg-white border-end-0 ps-3 text-muted"><i data-lucide="users" size="18"></i></span>
+                
+                <select name="gender" class="form-select border-start-0 ps-2 bg-white cursor-pointer" required>
+                    <option value="" selected disabled> Pilih Gender </option>
+                    <option value="L">Laki - Laki</option>
+                    <option value="P">Perempuan</option>                                                         
+                </select>
 
-                            <div class="form-group">
-                                <label class="form-label small fw-bold text-muted text-uppercase ls-wide mb-2 d-block">Password</label>
-                                <div class="input-group border rounded-3 overflow-hidden bg-light custom-input-group transition-all">
-                                    <span class="input-group-text bg-transparent border-0 text-muted ps-3">
-                                        <i data-lucide="lock" size="18"></i>
-                                    </span>
-                                    <input type="password" name="password" class="form-control bg-transparent border-0 shadow-none py-2" placeholder="••••••••" required>
-                                </div>
-                            </div>
+            </div>
+        </div>
+    </div>
 
-                            <div class="form-group">
-                                <label class="form-label small fw-bold text-muted text-uppercase ls-wide mb-2 d-block">Role / Hak Akses</label>
-                                <div class="input-group border rounded-3 overflow-hidden bg-light custom-input-group transition-all">
-                                    <span class="input-group-text bg-transparent border-0 text-muted ps-3">
-                                        <i data-lucide="shield-check" size="18"></i>
-                                    </span>
-                                    <select name="role" class="form-select bg-transparent border-0 shadow-none py-2" required>
-                                        <option value="" selected disabled>Pilih Hak Akses...</option>
-                                        <option value="admin">Administrator</option>
-                                        <option value="staff">Staff Instansi</option>
-                                    </select>
-                                </div>
-                            </div>
+    <div class="row g-4 mb-4">
+        <div class="col-md-6">
+            <label class="form-label small fw-bold text-uppercase text-muted ls-wide">Password <span class="text-danger">*</span></label>
+            <div class="input-group input-group-merge">
+                <span class="input-group-text bg-white border-end-0 ps-3 text-muted"><i data-lucide="lock" size="18"></i></span>
+                <input type="password" name="password" id="passInput" class="form-control border-start-0 border-end-0 ps-0 bg-white" placeholder="••••••••" required>
+                <button type="button" class="btn btn-outline-secondary border border-start-0 bg-white text-muted" onclick="togglePass()">
+                    <i data-lucide="eye" size="18" id="eyeIcon"></i>
+                </button>
+            </div>
+            <div class="form-text small text-muted mt-1">Username akan dibuat otomatis oleh sistem.</div>
+        </div>
+    </div>
 
-                            <div class="mt-2 pt-4 border-top d-flex gap-2">
-                                <button type="submit" class="btn btn-primary px-4 rounded-3 fw-bold d-flex align-items-center gap-2 py-2 shadow-sm btn-save transition-all" style="background-color: var(--accent); border: none;">
-                                    <i data-lucide="save" size="18"></i> Simpan Data
-                                </button>
-                                <a href="index.php?pegawai" class="btn btn-light px-4 rounded-3 fw-bold text-muted border py-2 transition-all">
-                                    Batal
-                                </a>
-                            </div>
+    <div class="d-flex align-items-center justify-content-end gap-3 mt-5 pt-3 border-top">
+        <?= btn::save("Simpan Pegawai Baru", "simpan"); ?>
+    </div>
 
-                        </div>
-                    </form>
+</form>
+
+<script>
+// Script sederhana untuk show/hide password
+function togglePass() {
+    var x = document.getElementById("passInput");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+}
+</script>
                 </div>
             </div>
             
-            <div class="mt-3 ps-2">
-                <p class="text-muted" style="font-size: 12px;">
-                    <i data-lucide="info" size="12" class="me-1"></i> Pastikan semua data sudah benar sesuai dengan Use Case <strong>Kelola Pegawai</strong>.
+            <div class="text-center mt-4 fade-in-up" style="animation-delay: 0.3s;">
+                <p class="text-muted small mb-0">
+                    <i data-lucide="info" size="14" class="me-1 text-primary"></i> 
+                    Pastikan data yang diinput sesuai dengan identitas pegawai.
                 </p>
             </div>
+
         </div>
     </div>
 </div>
 
 <style>
-    :root { --accent: #0d6efd; }
-    .transition-all { transition: all 0.2s ease-in-out; }
-    .hover-up:hover { transform: translateY(-1px); }
-    .ls-wide { letter-spacing: 0.03em; }
-    .fw-800 { font-weight: 800; }
-    .custom-input-group { border: 1px solid #dee2e6 !important; }
-    .custom-input-group:focus-within { 
-        border-color: var(--accent) !important; 
-        background-color: #fff !important; 
-        box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1); 
+    /* Input Group Merge (Icon nyatu sama input) */
+    .input-group-merge .input-group-text {
+        background-color: #fff;
+        border-color: #dee2e6;
     }
-    .btn-save:active { transform: scale(0.98); }
+    .input-group-merge .form-control, 
+    .input-group-merge .form-select {
+        border-color: #dee2e6;
+        box-shadow: none !important; /* Hapus shadow default bootstrap */
+    }
+    
+    /* Fokus Effect (Glow Biru Halus) */
+    .input-group-merge:focus-within .input-group-text,
+    .input-group-merge:focus-within .form-control,
+    .input-group-merge:focus-within .form-select,
+    .input-group-merge:focus-within button {
+        border-color: #0d6efd;
+        z-index: 2;
+    }
+
+    .ls-wide { letter-spacing: 0.5px; font-size: 0.75rem; }
+    .opacity-5 { opacity: 0.05; }
+    .cursor-pointer { cursor: pointer; }
+
+    /* Animasi Masuk */
+    .fade-in-up {
+        animation: fadeInUp 0.5s ease-out forwards;
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    @keyframes fadeInUp {
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Hover Tombol */
+    .btn-hover-scale { transition: transform 0.2s; }
+    .btn-hover-scale:hover { transform: translateY(-2px); }
 </style>
 
-<script>
-    lucide.createIcons();
-</script>

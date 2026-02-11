@@ -86,12 +86,7 @@ if (!isset($page)) {
                         <option>Mebel</option>
                         <option>Kendaraan</option>
                     </select>
-                    <div class="col-md-4">
-                    <button class="btn btn-primary d-flex align-items-center gap-2 justify-content-between" data-bs-toggle="modal" data-bs-target="#modalTambahAset">
-            <i data-lucide="plus-circle" style="width: 18px;"></i>
-            Tambah Aset Baru
-        </button>
-                </div>
+                    
                 </div>
             </div>
         </div>

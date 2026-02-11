@@ -1,3 +1,9 @@
+<?php if(isset($_GET['error']) && $_GET['error'] == 'terlarang'): ?>
+    <script>
+        Swal.fire('Akses Ditolak!', 'Anda tidak punya izin masuk ke sini.', 'error');
+    </script>
+<?php endif; ?>
+
 <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-5 gap-3">
     <div>
         <h2 class="fw-800 mb-1 ls-tight">Realtime Analytics</h2>

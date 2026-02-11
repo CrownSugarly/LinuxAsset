@@ -185,6 +185,15 @@ header {
   border-bottom: 1px solid var(--border-color);
 }
 
+.img-blend {
+    /* Multiply: Menghilangkan warna putih/terang */
+    mix-blend-mode: multiply; 
+    /* Contrast: Memastikan warna utama logo tetap tajam setelah background hilang */
+    filter: contrast(110%) brightness(110%);
+    /* Mencegah logo terlihat pudar di background gelap */
+    display: block;
+}
+
 .table-premium tbody td {
   padding: 1rem 1.5rem;
   vertical-align: middle;

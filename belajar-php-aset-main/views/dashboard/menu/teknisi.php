@@ -1,9 +1,9 @@
-<div class="nav-section-label">Teknisi Aset</div>
+<div class="nav-section-label">Menu Teknisi</div>
 
-<a href="index.php?maintenance" class="nav-link-custom <?php echo ($page_aktif == 'maintenance') ? 'active' : ''; ?>">
-    <i data-lucide="wrench"></i> Pemeliharaan
+<a href="index.php?pemeliharaan" class="nav-link-custom <?php echo ($page_aktif == 'pemeliharaan') ? 'active' : ''; ?>">
+    <i data-lucide="shield-check"></i> Pemeliharaan
 </a>
 
 <a href="index.php?perbaikan" class="nav-link-custom <?php echo ($page_aktif == 'perbaikan') ? 'active' : ''; ?>">
-    <i data-lucide="settings"></i> Perbaikan Aset
+    <i data-lucide="wrench"></i> Perbaikan
 </a>

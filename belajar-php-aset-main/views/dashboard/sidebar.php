@@ -6,30 +6,32 @@ $current_key = $keys[0] ?? 'beranda';
 // Definisikan "keluarga" halaman agar menu utama tetap active
 $page_aktif = $current_key;
 
-// Jika sedang di halaman tambah/edit pegawai, anggap page_aktif adalah 'pegawai'
+// Jika sedang di halaman tambah/edit pegawai
 if (in_array($current_key, ['pegawai', 'tambah_pegawai', 'edit_pegawai'])) {
     $page_aktif = 'pegawai';
 }
 
-// Jika sedang di halaman tambah/edit pengelola aset, anggap page_aktif adalah 'pengelola'
+// Jika sedang di halaman tambah/edit pengelola aset
 if (in_array($current_key, ['pengelola', 'tambah_pengelolaaset', 'edit_pengelolaaset'])) {
     $page_aktif = 'pengelola';
 }
 
-$judul_tampil = isset($judul) ? $judul : "Pasundan Aset";
+$judul_tampil = isset($judul) ? $judul : "Linux Aset";
 ?>
+
+<link rel="stylesheet" href="assets/css/sidebar.css" class="rel">
 
 <aside id="sidebar">
     <div class="sidebar-header">
         <div class="brand-logo">
-            <img src="assets/img/pass.svg" alt="Logo" width="32" height="32">
+            <img src="assets/img/linuxx.png" alt="Logo">
         </div>
-        <span class="brand-text fw-bold"><?php echo $judul_tampil; ?></span>
+       <span class="brand-text fw-bold ms-3"><?php echo $judul_tampil; ?></span>
     </div>
 
     <div class="d-flex flex-column flex-grow-1 overflow-auto custom-scrollbar">
         
-        <a href="index.php?beranda" class="nav-link-custom <?php echo ($page_aktif == 'beranda') ? 'active' : ''; ?>">
+        <a href="index.php" class="nav-link-custom <?php echo ($page_aktif == 'beranda') ? 'active' : ''; ?>">
             <i data-lucide="house"></i> Beranda
         </a>
 
@@ -46,3 +48,4 @@ $judul_tampil = isset($judul) ? $judul : "Pasundan Aset";
         </a>
     </div>
 </aside>
+

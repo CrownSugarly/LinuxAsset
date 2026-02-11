@@ -1,0 +1,20 @@
+/* assets/css/kpegawai.css */
+
+/* Efek hover pada card statistik (opsional jika ingin ditambahkan class hover-up di card) */
+.hover-up:hover {
+    transform: translateY(-2px);
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Styling Header Tabel */
+.table thead th {
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Styling tambahan agar tabel lebih rapi */
+.table tbody td {
+    vertical-align: middle;
+}

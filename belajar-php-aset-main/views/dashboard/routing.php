@@ -21,7 +21,7 @@ switch($page) {
     case 'edit_pengelola':
     case 'edit_pegawai':
         $judul = "Edit Data Pengelola";
-        include('viewss/pages/adm_instansi/edit_pegawai.php');
+        include('views/pages/adm_instansi/edit_pegawai.php');
         break;
 
     // --- ADMIN ASET ---

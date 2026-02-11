@@ -2,6 +2,10 @@
 session_start();
 
 require_once 'config/koneksi.php';
+require_once "views/components/button.php";
+require_once "views/components/Modal.php";
+
+
 
 // Cek apakah session 'status' sudah diset DAN tidak kosong
 if (isset($_SESSION['status']) && $_SESSION['status'] != '') {

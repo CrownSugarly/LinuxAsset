@@ -1,0 +1,16 @@
+/* Animasi Dropdown */
+.animate { animation-duration: 0.2s; -webkit-animation-duration: 0.2s; animation-fill-mode: both; -webkit-animation-fill-mode: both; }
+@keyframes slideIn { 
+0% { transform: translateY(10px); opacity: 0; } 
+100% { transform: translateY(0); opacity: 1; } 
+}
+.slideIn { -webkit-animation-name: slideIn; animation-name: slideIn; }
+
+.cursor-pointer { cursor: pointer; }
+.hover-dark:hover { color: #212529 !important; transition: 0.3s; }
+.line-height-1 { line-height: 1.2; }
+
+/* Responsive Styling */
+@media (max-width: 991.98px) {
+#sidebar.active { transform: translateX(0); }
+}

@@ -1,0 +1,49 @@
+/* 2. GANTI WARNA SIDEBAR DI SINI */
+#sidebar {
+    width: 260px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #212529; 
+    color: #fff;
+}
+
+.brand-logo {
+    background-color: transparent !important; /* Paksa jadi bening */
+    background: none !important;              /* Hapus background apapun */
+    border: none !important;                  /* Hapus garis pinggir */
+    box-shadow: none !important;              /* Hapus bayangan/glow */
+    padding: 0 !important;                    /* Hapus jarak aneh */
+}
+
+/* 2. KODE GAMBAR KAMU (YANG TADI) */
+.brand-logo img {
+    width: 50px;       
+    height: auto;      
+    object-fit: contain;
+    border-radius: 0;      
+    background-color: transparent !important; /* Pastikan ini juga transparan */
+    padding: 0;
+    opacity: 1;        
+    transition: 0.3s;
+}
+
+.brand-logo img:hover {
+    transform: scale(1.05);
+}
+
+.sidebar-header {
+    padding: 25px 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255, 0.1); 
+}
+
+.brand-text {
+    display: block;
+    margin-top: 12px;           /* Jarak antara logo dan teks */
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;  /* Membuat teks jadi huruf kapital agar lebih tegas */
+}
+
